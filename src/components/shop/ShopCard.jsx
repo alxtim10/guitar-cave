@@ -12,7 +12,7 @@ const ShopCard = ({ guitar }) => {
 
   return (
     <>
-      <div className="flex flex-col h-[40rem] bg-[#585858] w-96 rounded-md">
+      <div className="flex flex-col h-[20rem] lg:h-[30rem] bg-[#585858] w-72 lg:w-52 xl:w-96 rounded-md">
         <div className="relative w-full h-full">
           <Image
             src={guitar.image}
@@ -23,7 +23,7 @@ const ShopCard = ({ guitar }) => {
         </div>
         <div className="p-2 flex justify-between">
           <div className="text-white">
-            <h1>{guitar.name}</h1>
+            <h1 className="text-sm lg:text-md">{guitar.name}</h1>
             <h1>$ {guitar.price}</h1>
           </div>
           <button

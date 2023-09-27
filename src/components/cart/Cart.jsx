@@ -25,14 +25,14 @@ const Cart = () => {
   };
 
   return (
-    <section className="min-h-[100px] bg-[#585858] w-[50rem] max-w-md">
+    <section className="min-h-[100px] bg-[#585858] w-[20rem] md:w-[40rem] max-w-md">
       <div className="p-10">
-        <h1 className="mb-8 text-4xl text-white">Cart</h1>
+        <h1 className="mb-8 text-3xl text-white">Cart</h1>
         {cartItems.map((cartItem) => {
           return <CartCard key={cartItem.id} cartItem={cartItem} />;
         })}
         <div className="mt-5 text-white">
-          <h1 className="text-2xl mb-5">Cart Totals</h1>
+          <h1 className="text-xl mb-5">Cart Totals</h1>
           <div className="flex justify-between text-lg font-outfit">
             <h1>Subtotal</h1>
             <h1>$ {cartTotal}</h1>

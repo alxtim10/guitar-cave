@@ -14,7 +14,7 @@ const CartCard = ({ cartItem }) => {
   return (
     <section className="bg-[#5f5e5e] p-2 shadow-xl mt-5">
       <div className="flex justify-start items-center">
-        <div className="relative w-20 h-28">
+        <div className="relative w-20 h-20  md:w-20 md:h-28">
           <Image
             src={cartItem.image}
             layout="fill"

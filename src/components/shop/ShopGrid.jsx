@@ -8,7 +8,9 @@ import { ShopContext } from "@/contexts/shop.context";
 import axios from "axios";
 
 const ShopGrid = () => {
+  // const [filteredData, setFilteredData] = useState(guitarShopData);
   const [filteredData, setFilteredData] = useState([]);
+  const [datas, setDatas] = useState(guitarShopData);
   let inputValue = "";
 
   const filterByName = (event) => {
@@ -16,6 +18,9 @@ const ShopGrid = () => {
   };
 
   const searchHandler = () => {
+    // const filtered = datas.filter((data) =>
+    //   data.name.toLowerCase().includes(inputValue.toLowerCase())
+    // );
     const filtered = guitarData.filter((data) =>
       data.name.toLowerCase().includes(inputValue.toLowerCase())
     );
@@ -26,17 +31,12 @@ const ShopGrid = () => {
     useContext(ShopContext);
 
   async function fetch() {
-    const res = await axios
-      .get("http://localhost:5000/guitars/")
-      .catch((error) => {
-        if (!error.response) {
-          console.log("BACKEND MATI");
-        } else {
-          console.log(error.response.data);
-          console.log(error.response.status);
-        }
-      });
-
+    const res = await axios.get(
+      "https://guitar-cave-backend.vercel.app/guitars"
+    );
+    // const res = await axios.get(
+    //   "http://localhost:8080/guitars"
+    // );
     setMainGuitarsData(res.data);
   }
 
@@ -50,11 +50,11 @@ const ShopGrid = () => {
 
   return (
     <section className="">
-      <div className="flex items-center justify-end px-20 py-10 gap-10">
+      <div className="flex items-center justify-center xl:justify-end py-10 gap-10 xl:pr-20">
         <div className="flex">
           <input
             type="text"
-            className="w-[20rem] bg-white pl-2 text-base font-semibold outline-0"
+            className="w-[15rem] bg-white pl-2 text-base font-semibold outline-0"
             placeholder="Guitar"
             onChange={filterByName}
           />
@@ -67,15 +67,15 @@ const ShopGrid = () => {
           </button>
         </div>
       </div>
-      <div className="flex justify-start items-start gap-5 px-10">
-        <Cart />
+      <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start gap-5 px-10">
         <div className="flex flex-col gap-10">
-          <div className="flex flex-wrap justify-end items-start gap-10">
+          <div className="flex flex-wrap justify-center xl:justify-start lg:justify-left items-start gap-10">
             {filteredData.map((guitar) => {
               return <ShopCard key={guitar.name} guitar={guitar} />;
             })}
           </div>
         </div>
+        <Cart />
       </div>
     </section>
   );

@@ -24,15 +24,13 @@ const Navbar = () => {
       <Link href="/">
         <h1 className="text-white text-3xl">Guitar Cave</h1>
       </Link>
-      <div className="flex gap-10 text-white text-lg">
-        <Link href="/">
-          <h1>Home</h1>
-        </Link>
+      <div className="flex flex-col md:flex-row gap-2 md:gap-10 text-white text-sm md:text-lg">
         <Link href="/shop">
           <h1>Buy</h1>
         </Link>
-        <h1>About Us</h1>
-        <h1>Account</h1>
+        <Link href="/">
+          <h1>About Us</h1>
+        </Link>
       </div>
     </div>
   );

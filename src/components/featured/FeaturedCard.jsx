@@ -4,7 +4,7 @@ import React from "react";
 
 const FeaturedCard = ({ data }) => {
   return (
-    <div className="flex flex-col w-full h-[45rem]">
+    <div className="flex flex-col w-full md:w-[40rem] h-[25rem] md:h-[45rem]">
       <div className="relative h-full hover:brightness-50 transition duration-300">
         <Link href="/shop">
           <Image
