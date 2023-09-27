@@ -41,6 +41,16 @@ const ShopGrid = () => {
   }
 
   useEffect(() => {
+    async function fetch() {
+      const res = await axios.get(
+        "https://guitar-cave-backend.vercel.app/guitars"
+      );
+      // const res = await axios.get(
+      //   "http://localhost:8080/guitars"
+      // );
+      setMainGuitarsData(res.data);
+    }
+
     fetch();
   }, []);
 
@@ -71,7 +81,7 @@ const ShopGrid = () => {
         <div className="flex flex-col gap-10">
           <div className="flex flex-wrap justify-center xl:justify-start lg:justify-left items-start gap-10">
             {filteredData.map((guitar) => {
-              return <ShopCard key={guitar.name} guitar={guitar} />;
+              return <ShopCard key={guitar.id} guitar={guitar} />;
             })}
           </div>
         </div>
