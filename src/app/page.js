@@ -5,10 +5,11 @@ import Navbar from "@/components/navigation/Navbar";
 import StoreSection from "@/components/store/StoreSection";
 
 export default function Home() {
+
+
   return (
     <>
-    
-    <Navbar />
+      <Navbar />
       <main>
         <Hero />
         <Featured />

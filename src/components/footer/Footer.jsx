@@ -24,7 +24,10 @@ const footerLinks = [
   {
     title: "Get in touch",
     links: [
-      { name: "customer@guitarcave.com", link: "mailto:customer@guitarcave.com" },
+      {
+        name: "customer@guitarcave.com",
+        link: "mailto:customer@guitarcave.com",
+      },
       { name: "+62855231238", link: "tel:+62811342362" },
     ],
   },
@@ -32,7 +35,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="py-5 px-10">
+    <footer className="py-5 px-10 text-white">
       <div
         className="flex justify-between items-start gap-20
       flex-wrap max-lg:flex-col"
@@ -41,7 +44,7 @@ const Footer = () => {
           {footerLinks.map((section) => (
             <div key={section}>
               <h4
-                className="text-white font-montserrat text-2xl leading-normal font-medium
+                className="text-2xl leading-normal font-medium
                   mb-6"
               >
                 {section.title}
@@ -50,7 +53,7 @@ const Footer = () => {
                 {section.links.map((link) => (
                   <li
                     key={link.name}
-                    className="mt-3 text-white-400 font-monserrat text-base leading-normal hover:text-slate-gray
+                    className="mt-3 text-base leading-normal hover:text-slate-gray
                       cursor-pointer"
                   >
                     <a>{link.name}</a>
@@ -60,7 +63,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm">
+        <p className="mt-6 text-base leading-7 sm:max-w-sm">
           Nestled in the heart of our bustling town, Guitar Cave is a haven for
           guitar enthusiasts of all levels, from seasoned shredders to aspiring
           strummers. Step into our cozy, music-filled sanctuary and immerse
@@ -70,9 +73,9 @@ const Footer = () => {
       </div>
       <div
         className="flex justify-between
-      text-white-400 mt-24 max-sm:flex-col max-sm:items-center"
+      mt-24 max-sm:flex-col max-sm:items-center"
       >
-        <div className="flex flex-1 justify-start items-center gap-2 font-monserrat cursor-pointer">
+        <div className="flex flex-1 justify-start items-center gap-2 cursor-pointer">
           <p>Copyright. All rights reserved.</p>
         </div>
         <p className="font-montserrat cursor-pointer">Terms & Conditions</p>
