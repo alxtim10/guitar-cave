@@ -2,7 +2,7 @@
 export default function ShopLayout({ children }) {
   return (
     <>
-      <main className="py-20">
+      <main className="pb-5">
         {children}
       </main>
     </>
